@@ -1,0 +1,22 @@
+# Ignore system and IDE files
+.DS_Store
+.idea/
+
+# Ignore vendor and dependency directories
+vendor/
+node_modules/
+
+# Ignore log files and cache directories
+storage/logs/
+bootstrap/cache/
+
+# Ignore environment configuration files
+.env
+
+# Ignore user-specific files
+.env.local
+.env.*.local
+
+# Ignore database and asset files
+public/uploads/
+database/*.sqlite
