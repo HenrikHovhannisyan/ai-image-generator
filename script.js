@@ -1,5 +1,5 @@
 const apiKey = "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";
-const maxImages = 9;
+const maxImages = 8;
 const generateInfo = document.getElementById("generate");
 const imageGrid = document.getElementById("image-grid");
 const loading = document.getElementById("loading");
@@ -23,7 +23,13 @@ async function generateImages(input) {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${apiKey}`,
                 },
-                body: JSON.stringify({ inputs: prompt }),
+                body: JSON.stringify({
+                    inputs: prompt,
+                    parameters: {
+                        width: 512,
+                        height: 768,
+                    },
+                }),
             }
         );
 
