@@ -44,10 +44,9 @@ async function generateImages(input) {
         const img = document.createElement("img");
         img.src = imgUrl;
         img.alt = `art-${i + 1}`;
-        img.onclick = () => downloadImage(imgUrl, i);
+        img.onclick = () => openImageModal(imgUrl, i);
         imageGrid.appendChild(img);
     }
-
     loading.style.display = "none";
     generateInfo.disabled = false;
 }
@@ -63,3 +62,21 @@ function downloadImage(imgUrl, imageNumber) {
     link.download = `image-${imageNumber + 1}.jpg`;
     link.click();
 }
+
+function openImageModal(imgUrl, imageNumber) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const downloadButton = document.getElementById("downloadButton");
+
+    modal.style.display = "flex";
+    modalImage.src = imgUrl;
+
+    downloadButton.onclick = () => downloadImage(imgUrl, imageNumber);
+}
+
+const modal = document.getElementById("imageModal");
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
