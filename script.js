@@ -1,5 +1,5 @@
 const apiKey = "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";
-const maxImages = 8;
+const maxImages = 6;
 const generateInfo = document.getElementById("generate");
 const imageGrid = document.getElementById("image-grid");
 const loading = document.getElementById("loading");
